@@ -1,0 +1,38 @@
+type Query {
+  foods: [Food!]
+}
+type Food {
+  id:ID
+  foodName: String
+  info: String
+  cost: Int
+  image: String
+  type:String
+  restarant: Any
+}
+type Mutation {
+  createFood(
+    foodName: String!
+    info: String!
+    image: Upload!
+    cost: Int!
+    type:Types!
+    restarant: ID!
+  ): ResponseAccess!
+  updateFood(foodName: String!, cost: Int!, info: String!, id: ID!): String!
+  deleteFood(id: ID!): String!
+}
+type ResponseAccess {
+  status: Int
+  message: String
+  data: Any
+}
+enum Types{
+  fast_foods,
+  sweets,
+  barbeque,
+  soups,
+  salad
+}
+scalar Upload
+scalar Any

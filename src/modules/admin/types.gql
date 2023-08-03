@@ -1,0 +1,7 @@
+type Mutation {
+  login(admin: String! password:String! ): Response!
+}
+type Response{
+    message:String
+    token:String
+}

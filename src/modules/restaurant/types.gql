@@ -1,0 +1,17 @@
+type Query {
+  restarants: [Restarant!]
+}
+type Restarant {
+  id:ID
+  restarantName: String
+  info: String
+  image:String
+}
+
+type Mutation {
+  createRestarant(restarantName: String!, info: String!,image:Upload!): String!
+  updateRestarant(restarantName: String!,info:String! id: ID!): String!
+  deleteRestarant(id: ID!): String!
+}
+
+scalar Upload
